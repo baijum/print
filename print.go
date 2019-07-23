@@ -26,7 +26,7 @@ func Close() error {
 func init() {
 	pid := strconv.Itoa(os.Getpid())
 	var err error
-	logfile, err = ioutil.TempFile("", pid+".txt")
+	logfile, err = ioutil.TempFile("", pid+"-*.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
